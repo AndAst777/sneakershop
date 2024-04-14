@@ -45,3 +45,8 @@
         </div>
     </form>
 </x-guest-layout>
+{{-- @include('components.app')
+
+<body>
+    @include('components.login_form')
+</body> --}}
