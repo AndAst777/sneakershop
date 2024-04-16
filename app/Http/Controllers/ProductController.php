@@ -18,6 +18,15 @@ class ProductController extends Controller
         // return view('admin', compact("posts"));
     }
 
+    public function basket()
+    {
+        $products = Product::all();
+        return view('basket', compact("products"));
+        // $post = Post::all();
+        // return view('admin', compact("posts"));
+    }
+
+
 
     public function admin()
     {
@@ -30,6 +39,7 @@ class ProductController extends Controller
 
     public function show(string $id)
     {
+
         $products = Product::findOrFail($id);
         return view("product", compact('products'));
     }
@@ -39,9 +49,16 @@ class ProductController extends Controller
         $product = new Product();
         $product->title = $request->title;
         $product->price = $request->price;
+        $product->description = $request->description;
         $product->image = $request->file('image')->store('images', 'public');
         $product->save();
 
         return redirect()->route('admin')->with('success', 'Product created successfully');
+    }
+
+    public function destroy(Product $product){
+    $product->delete();
+
+    return redirect()->route('admin')->with('succes', 'Product delete succesfully');
     }
 }

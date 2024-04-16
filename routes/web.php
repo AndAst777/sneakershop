@@ -31,13 +31,20 @@
 
     //Товары
     Route::post('product', [ProductController::class, 'store'])->name('product.store');
-    Route::get('product{id}', [ProductController::class, 'show'])->name('product');
-
+    Route::get('product{product} ', [ProductController::class, 'show'])->name('posts.show');
+    // Route::post('product{product}', [ProductController::class, 'destroy'])->name('product.delete');
+    Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+    Route::get('product{product}', [ProductController::class, 'show'])->name('product');
+    Route::get('basket', [ProductController::class, 'basket'])->name('basket');
+    // Route::get('addBasket_id', [ProductController::class, 'storebasket'])->name('basket')
 
     Route::get('admin', [ProductController::class, 'admin'])->middleware(['auth', 'verified'])->name('admin');
+
     // Route::get('admin', [PostController::class, 'admin'])->name('admin');
     //Новости
+    Route::get('adminpost', [PostController::class, 'adminpost'])->name('adminpost');
     Route::post('post', [PostController::class, 'store'])->name('post.store');
+
 
 
     Route::get('/dashboard', function () {
