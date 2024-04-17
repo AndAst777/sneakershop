@@ -20,24 +20,24 @@
 </div> --}}
 
 
-<div class="w-full max-w-sm bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="w-full place-items-center items-center max-w-sm bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="{{ route('product', $product->id) }}">
-        <img class="p-8 rounded-t-lg" src="{{asset('/storage/' . $product->image)}}" alt="product image" />
+        <img class="p-8 " src="{{asset('/storage/' . $product->image)}}" alt="product image" />
     </a>
     <div class="px-5 pb-5">
         <a href="#">
             <h5 class="text-xl text-center font-semibold tracking-tight text-gray-900 dark:text-white">{{$product->title}}</h5>
         </a>
 
-        <div class="flex items-center mt-2.5 mb-5">
+        <div class=" mt-2.5 mb-5">
             <div class="flex items-center space-x-1 rtl:space-x-reverse">
-
+                <span class="text-md font-bold text-gray-900 dark:text-white">{{$product->price . '₽'}}</span>
             </div>
 
         </div>
         <div class="flex items-center justify-between">
-            <span class="text-md text-center font-bold text-gray-900 dark:text-white">{{$product->price . '₽'}}</span>
-            <button type="button" class="text-white  bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Добавить в корзину</button>
+
+            <button type="button" class="text-white      bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Добавить в корзину</button>
         </div>
     </div>
 </div>

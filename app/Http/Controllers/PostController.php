@@ -13,11 +13,11 @@ class PostController extends Controller
         return view('blog', compact("posts"));
     }
 
-    public function admin()
-    {
-        $posts = Post::all();
-        return view('admin', compact("posts"));
-    }
+    // public function admin()
+    // {
+    //     $posts = Post::all();
+    //     return view('admin', compact("posts"));
+    // }
 
     public function store(Request $request)
     {
